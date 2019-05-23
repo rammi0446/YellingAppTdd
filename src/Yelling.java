@@ -21,11 +21,12 @@ private static boolean isStringUpperCase(String str){
 public String Scream(String[] result)
 {
 	//one person is yelling
+	boolean checkCase = false;
 	
 	if(result[0]!= "NULL" && result.length == 1)
 	{
 		String yelling = " is yelling";
-		boolean checkCase = isStringUpperCase(result[0]);
+		 checkCase = isStringUpperCase(result[0]);
 		if(checkCase == true)
 		{
 			yelling = yelling.toUpperCase();
@@ -39,9 +40,18 @@ public String Scream(String[] result)
 	{
 		String yelling = " is yelling";
 		String all = "";
+		String Upper = "";
 		for(int i = 0; i< result.length ; i++)
 		{
-			
+
+			checkCase = isStringUpperCase(result[i]);
+			if(checkCase == true)
+			{
+				Upper = result[i];
+				all =	all + result[i] ; 
+			}
+			else if(checkCase == false)
+			{
 				all =	all + result[i] ; 
 				if(i<(result.length-2))
 				{
@@ -51,8 +61,13 @@ public String Scream(String[] result)
 				{
 					all = all + " and ";
 				}
+			}
 				
 		}	
+		if(checkCase == true)
+		{
+			return all + yelling + ", so is" + Upper;
+		}
 		return all + yelling;
 		
 	}

@@ -60,6 +60,13 @@ public class YellingTest {
 					assertEquals("sagar , raman , deep , you and yes is yelling", output);
 				}
 				
-				
+				//R6: more than two people are yelling and upper
+				@Test
+				public void testmoreandUpperYelling() {
+					Yelling y = new Yelling();
+					String[] result = { "sagar" , "RAMAN"};
+					String output = y.Scream(result);
+					assertEquals("sagar and raman is yelling, so is RAMAN", output);
+				}
 
 }
