@@ -32,14 +32,9 @@ public String Scream(String[] result)
 		}
 		return result[0] +yelling;	
 	}
-	//two person
-	else if(result.length == 2)
-	{
-		String yelling = " is yelling";
-		return result[0] +" and "+ result[1] +yelling;
-	}
 	
-	//more than two person yelling
+	
+	//two or more than two person yelling
 	else if(result.length >= 2)
 	{
 		String yelling = " is yelling";
