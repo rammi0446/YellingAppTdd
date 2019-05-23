@@ -1,11 +1,39 @@
 
 public class Yelling {
-public String Scream(String name)
+	
+private static boolean isStringUpperCase(String str){
+        
+        //convert String to char array
+        char[] charArray = str.toCharArray();
+        
+        for(int i=0; i < charArray.length; i++){
+            
+            //if any character is not in upper case, return false
+            if( !Character.isUpperCase( charArray[i] ))
+                return false;
+        }
+        
+        return true;
+    }
+public String Scream(String[] result)
 {
 	//one person is yelling
-	if(name!= "NULL")
+	
+	if(result[0]!= "NULL" && result.length == 1)
 	{
-		return name +" is yelling";
+		String yelling = " is yelling";
+		boolean checkCase = isStringUpperCase(result[0]);
+		if(checkCase == true)
+		{
+			yelling = yelling.toUpperCase();
+		}
+		return result[0] +yelling;	
+	}
+	//two person
+	else if(result.length == 2)
+	{
+		String yelling = " is yelling";
+		return result[0] +" and "+ result[1] +yelling;
 	}
 	
 	return "Nobody is yelling";

@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,15 +20,35 @@ public class YellingTest {
 	@Test
 	public void testOneYelling() {
 		Yelling y = new Yelling();
-		String result = y.Scream("peter");
-		assertEquals("peter is yelling",result);
+	
+		String[] result = { "peter" };
+		String output = y.Scream(result);
+		assertEquals("peter is yelling", output);
 	}
-	//R2: Null is yelling
+//	R2: Null Person is Yelling
 	@Test
 	public void testNullYelling() {
 		Yelling y = new Yelling();
-		String result = y.Scream("NULL");
-		assertEquals("Nobody is yelling",result);
+		String[] result = { "NULL" };
+		String output = y.Scream(result);
+		assertEquals("Nobody is yelling", output);
 	}
+	//R3: upercase
+	@Test
+	public void testUpperYelling() {
+		Yelling y = new Yelling();
+		String[] result = { "PETER" };
+		String output = y.Scream(result);
+		assertEquals("PETER IS YELLING", output);
+	}
+//	
+	//R3: two people are yelling
+		@Test
+		public void testTwoYelling() {
+			Yelling y = new Yelling();
+			String[] result = { "sagar" , "raman" };
+			String output = y.Scream(result);
+			assertEquals("sagar and raman is yelling", output);
+		}
 
 }
