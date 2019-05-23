@@ -14,9 +14,12 @@ public class YellingTest {
 	public void tearDown() throws Exception {
 	}
 
+	//R1: One Person is yelling
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		Yelling y = new Yelling();
+		String result = y.Scream("peter");
+		assertEquals("peter is yelling",result);
 	}
 
 }
