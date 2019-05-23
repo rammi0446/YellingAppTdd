@@ -16,10 +16,16 @@ public class YellingTest {
 
 	//R1: One Person is yelling
 	@Test
-	public void test() {
+	public void testOneYelling() {
 		Yelling y = new Yelling();
 		String result = y.Scream("peter");
 		assertEquals("peter is yelling",result);
+	}
+	@Test
+	public void testNullYelling() {
+		Yelling y = new Yelling();
+		String result = y.Scream("NULL");
+		assertEquals("NULL",result);
 	}
 
 }
