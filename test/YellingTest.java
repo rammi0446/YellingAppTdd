@@ -25,7 +25,7 @@ public class YellingTest {
 	public void testNullYelling() {
 		Yelling y = new Yelling();
 		String result = y.Scream("NULL");
-		assertEquals("NULL",result);
+		assertEquals("NULL is yelling",result);
 	}
 
 }
