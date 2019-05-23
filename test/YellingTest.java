@@ -21,11 +21,12 @@ public class YellingTest {
 		String result = y.Scream("peter");
 		assertEquals("peter is yelling",result);
 	}
+	//R2: Null is yelling
 	@Test
 	public void testNullYelling() {
 		Yelling y = new Yelling();
 		String result = y.Scream("NULL");
-		assertEquals("NULL is yelling",result);
+		assertEquals("Nobody is yelling",result);
 	}
 
 }
