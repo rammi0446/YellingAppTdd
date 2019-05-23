@@ -15,6 +15,9 @@ private static boolean isStringUpperCase(String str){
         
         return true;
     }
+
+
+
 public String Scream(String[] result)
 {
 	//one person is yelling
@@ -35,6 +38,30 @@ public String Scream(String[] result)
 		String yelling = " is yelling";
 		return result[0] +" and "+ result[1] +yelling;
 	}
+	
+	//more than two person yelling
+	else if(result.length >= 2)
+	{
+		String yelling = " is yelling";
+		String all = "";
+		for(int i = 0; i< result.length ; i++)
+		{
+			
+				all =	all + result[i] ; 
+				if(i<(result.length-2))
+				{
+					all = all + " , ";
+				}
+				else if((result.length-2) == i)
+				{
+					all = all + " and ";
+				}
+				
+		}	
+		return all + yelling;
+		
+	}
+	
 	
 	return "Nobody is yelling";
 	
